@@ -20,6 +20,15 @@ public class Follower : MonoBehaviour
 
     void FixedUpdate()
     {
-        //this.transform.localPosition = Vector3.MoveTowards(this.transform, target.transform, 0.3f);
+        //when following, we also want the thing to look at the target:
+        this.GetComponent<Transform>().LookAt(target.transform);
+
+        //follow the target
+        //Space.self is used because the thing is looking at the player, and we can move forward in the relative space/local axis of z
+        //doesn't use physics so goes through walls
+        this.transform.Translate(new Vector3(0,0,0.005f), Space.Self);
+
+
+        //"this." is optional, transform is already pointing to this object, it's just to demonstrate where it's coming from
     }
 }
