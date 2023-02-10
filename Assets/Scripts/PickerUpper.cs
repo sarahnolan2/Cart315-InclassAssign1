@@ -6,6 +6,8 @@ public class PickerUpper : MonoBehaviour
 {
     public int count = 0;
 
+    public GameObject particlePrefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,9 @@ public class PickerUpper : MonoBehaviour
     {
         if (collision.collider.gameObject.CompareTag("Pickup")) //if the player collides with an object with a tag "Pickup"
         {
+            //instantiate our particle system for feedback on pickup
+            GameObject.Instantiate(particlePrefab, collision.collider.gameObject.transform.position, Quaternion.identity);
+
             //destroy the object (we picked it up)
             GameObject.Destroy(collision.collider.gameObject);
 
