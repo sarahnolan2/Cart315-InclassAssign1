@@ -41,7 +41,7 @@ public class CollisionResponse : MonoBehaviour
             //so we do this when we want the vector or all vectors to have the same magnitude 
             // and only care about the direction
 
-            force *= 200.0f;
+            force *= 200.0f; // so when normalizing, the force will always be 200.
 
             this.GetComponent<Rigidbody>().AddForce(force);
 

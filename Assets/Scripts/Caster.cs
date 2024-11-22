@@ -55,11 +55,7 @@ public class Caster : MonoBehaviour
                 {
                     GameObject.Instantiate(prefab, rayHitInfo.point, Quaternion.identity);
                 }
-                
-
             }
-
         }
     }
-
 }

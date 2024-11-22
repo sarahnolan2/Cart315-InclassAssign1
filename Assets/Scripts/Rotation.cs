@@ -42,7 +42,6 @@ public class Rotation : MonoBehaviour
             // and if we have picked up more than 3 objects
             if (rotate && player.count >= 3)
             {
-
                 this.GetComponent<Transform>().Rotate(0, rotationSpeed, 0);
                 //can now create cases for stuff to happen one after the other (pickup thing, open blocked path, etc)
             }
